@@ -9,6 +9,7 @@ import "./App.css";
 import { templateOneType } from "./types/templateOneType";
 import { templateThreeType } from "./types/templateThreeType";
 import { templateTwoType } from "./types/templateTwoType";
+import RegenerateBtn from "./components/RegenerateBtn.tsx";
 
 const LazyErrorComponent = lazy(() => import("./components/ErrorComponent"));
 
@@ -60,16 +61,14 @@ function App() {
   const SectionComponent = template;
 
   return (
-    <>
-      <div>
-        <h1>Vite + React</h1>
-      </div>
+    <div className="relative w-full h-full">
+      <RegenerateBtn />
       <Suspense fallback={<div>Loading...</div>}>
         {SectionComponent && templateSchema && (
           <SectionComponent templateSchema={templateSchema} />
         )}
       </Suspense>
-    </>
+    </div>
   );
 }
 

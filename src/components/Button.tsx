@@ -9,7 +9,8 @@ function Button({ text, textColor, bgColor, hoverColor }: btnType) {
         backgroundColor: bgColor,
       }}
       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = hoverColor)}
-      className="py-1 cursor-pointer px-2 rounded-md"
+      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
+      className="py-2 cursor-pointer px-5 rounded-md"
     >
       <EditableInput defaultValue={text} />
     </button>

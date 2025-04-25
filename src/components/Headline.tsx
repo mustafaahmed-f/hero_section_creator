@@ -4,7 +4,7 @@ import EditableInput from "./EditableInput";
 function Headline({ text, textColor = "black" }: headlinesType) {
   return (
     <div
-      className=" text-3xl whitespace-break-spaces px-2 py-4"
+      className=" text-4xl font-bold whitespace-break-spaces px-2 py-4"
       style={{ color: textColor }}
     >
       <EditableInput defaultValue={text} />
