@@ -8,6 +8,7 @@ export interface btnType {
   bgColor: string;
   textColor: string;
   text: string;
+  hoverColor: string;
 }
 
 export interface headlinesType {
