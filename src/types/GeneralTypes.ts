@@ -1,5 +1,6 @@
 export interface navbarType {
   title: string;
+  titleColor?: string;
   options: string[];
   textColor: string;
 }
