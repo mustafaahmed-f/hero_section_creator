@@ -29,6 +29,7 @@ export default tseslint.config(
       "no-unused-vars": "warn",
       "prefer-const": "off",
       "no-empty-pattern": "off",
+      "no-unused-vars": "warn",
     },
   }
 );
