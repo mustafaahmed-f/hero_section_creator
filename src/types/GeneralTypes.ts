@@ -4,7 +4,7 @@ export interface navbarType {
   textColor: string;
 }
 
-export interface btnType {
+export interface btnType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   bgColor: string;
   textColor: string;
   text: string;

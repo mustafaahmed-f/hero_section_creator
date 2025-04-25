@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function RegenerateBtn() {
+function RegenerateBtn({ onClick }: { onClick?: () => void }) {
   return (
     <div className="fixed right-[25px] bottom-[25px] z-50">
       <Button
@@ -8,6 +8,7 @@ function RegenerateBtn() {
         bgColor="#6938EF"
         textColor="#FFFFFF"
         hoverColor="#7F56D9"
+        onClick={onClick}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import { btnType } from "../types/GeneralTypes";
 import EditableInput from "./EditableInput";
 
-function Button({ text, textColor, bgColor, hoverColor }: btnType) {
+function Button({ text, textColor, bgColor, hoverColor, onClick }: btnType) {
   return (
     <button
       style={{
@@ -11,6 +11,7 @@ function Button({ text, textColor, bgColor, hoverColor }: btnType) {
       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = hoverColor)}
       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
       className="py-2 cursor-pointer px-5 rounded-md"
+      onClick={onClick}
     >
       <EditableInput defaultValue={text} />
     </button>

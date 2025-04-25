@@ -10,6 +10,7 @@ import { templateOneType } from "./types/templateOneType";
 import { templateThreeType } from "./types/templateThreeType";
 import { templateTwoType } from "./types/templateTwoType";
 import RegenerateBtn from "./components/RegenerateBtn.tsx";
+import Loader from "./components/Loader.tsx";
 
 const LazyErrorComponent = lazy(() => import("./components/ErrorComponent"));
 
@@ -28,7 +29,7 @@ function App() {
   const { 0: currentSectionNum, 1: setCurrentSectionNum } = useState<number>(1);
 
   function changeSection() {
-    if (currentSectionNum === 6) {
+    if (currentSectionNum === 2) {
       setCurrentSectionNum(1);
     } else {
       setCurrentSectionNum((prev) => prev + 1);
@@ -40,10 +41,19 @@ function App() {
     setTemplateSchema(null);
     import(`./sections/section${currentSectionNum}.ts`)
       .then((json) => {
+        console.log(json);
         setTemplateSchema(json.sectionSchema);
         switch (json.sectionSchema.templateType) {
           case 1:
             setTemplate(lazy(() => import("./templates/template1.tsx")));
+            break;
+
+          case 2:
+            setTemplate(lazy(() => import("./templates/template2.tsx")));
+            break;
+
+          case 3:
+            setTemplate(lazy(() => import("./templates/template3.tsx")));
             break;
 
           default:
@@ -62,8 +72,8 @@ function App() {
 
   return (
     <div className="relative w-full h-full">
-      <RegenerateBtn />
-      <Suspense fallback={<div>Loading...</div>}>
+      <RegenerateBtn onClick={changeSection} />
+      <Suspense fallback={<Loader />}>
         {SectionComponent && templateSchema && (
           <SectionComponent templateSchema={templateSchema} />
         )}
