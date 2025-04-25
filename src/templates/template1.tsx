@@ -39,7 +39,7 @@ function template1({ templateSchema }: template1Props) {
         <div className="flex justify-center items-center max-h-full  rounded-2xl">
           <img
             src={templateSchema.imageUrl}
-            className="h-full max-h-[500px] min-w-full object-fill rounded-lg template-one-img"
+            className="h-full max-h-[500px] min-w-full object-fill rounded-lg border-2 template-one-img"
             alt="section image"
           />
         </div>

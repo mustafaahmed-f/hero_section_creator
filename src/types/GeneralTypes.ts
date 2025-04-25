@@ -15,3 +15,5 @@ export interface headlinesType {
   text: string;
   textColor: string;
 }
+
+export interface generalTemplateProperties {}
