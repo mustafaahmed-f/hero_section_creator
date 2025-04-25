@@ -39,7 +39,6 @@ function App() {
     setTemplateSchema(null);
     import(`./sections/section${currentSectionNum}.ts`)
       .then((json) => {
-        console.log("Json template : ", json);
         setTemplateSchema(json.sectionSchema);
         switch (json.sectionSchema.templateType) {
           case 1:
@@ -57,9 +56,6 @@ function App() {
         setTemplate(LazyErrorComponent);
       });
   }, [currentSectionNum, setTemplate, setTemplateSchema]);
-
-  console.log("templateSchema", templateSchema);
-  console.log("Template : ", template);
 
   const SectionComponent = template;
 
