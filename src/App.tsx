@@ -40,7 +40,7 @@ function App() {
     import(`./sections/section${currentSectionNum}.ts`)
       .then((json) => {
         console.log("Json template : ", json);
-        setTemplateSchema(json);
+        setTemplateSchema(json.sectionSchema);
         switch (json.sectionSchema.templateType) {
           case 1:
             setTemplate(lazy(() => import("./templates/template1.tsx")));
