@@ -1,12 +1,7 @@
+import { btnType } from "../types/GeneralTypes";
 import EditableInput from "./EditableInput";
 
-interface ButtonProps {
-  bgColor: string;
-  textColor: string;
-  text: string;
-}
-
-function Button({ text, textColor, bgColor }: ButtonProps) {
+function Button({ text, textColor, bgColor }: btnType) {
   return (
     <button
       style={{

@@ -1,11 +1,7 @@
+import { headlinesType } from "../types/GeneralTypes";
 import EditableInput from "./EditableInput";
 
-interface SubHeadlineProps {
-  text: string;
-  textColor: string;
-}
-
-function SubHeadline({ text, textColor }: SubHeadlineProps) {
+function SubHeadline({ text, textColor }: headlinesType) {
   return (
     <div
       className=" text-xl whitespace-break-spaces px-2 py-4"

@@ -1,12 +1,7 @@
+import { navbarType } from "../types/GeneralTypes";
 import EditableInput from "./EditableInput";
 
-interface NavBarProps {
-  title: string;
-  options: string[];
-  textColor: string;
-}
-
-function NavBar({ title, options, textColor }: NavBarProps) {
+function NavBar({ title, options, textColor }: navbarType) {
   return (
     <nav className="bg-transparent">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

@@ -1,11 +1,7 @@
+import { headlinesType } from "../types/GeneralTypes";
 import EditableInput from "./EditableInput";
 
-interface HeadlineProps {
-  text: string;
-  textColor: string;
-}
-
-function Headline({ text, textColor = "black" }: HeadlineProps) {
+function Headline({ text, textColor = "black" }: headlinesType) {
   return (
     <div
       className=" text-3xl whitespace-break-spaces px-2 py-4"
