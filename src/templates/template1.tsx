@@ -15,7 +15,10 @@ function template1({ templateSchema }: template1Props) {
   const { text: subHeadlineText, textColor: subHeadlineTextColor } =
     templateSchema.subHeadline;
   return (
-    <div className="grid grid-rows-[auto_1fr] min-h-full">
+    <section
+      className="grid grid-rows-[auto_1fr] min-h-full"
+      style={{ backgroundColor: templateSchema.wholeBackGroundColr }}
+    >
       <NavBar title={title} options={options} textColor={textColor} />
       <div className="grid h-full grid-cols-1 gap-x-10 gap-y-7 max-sm:grid-rows-[auto_1fr] sm:grid-cols-2 p-4 md:px-[144px] md:py-10">
         <div className="flex items-center justify-between">
@@ -41,7 +44,7 @@ function template1({ templateSchema }: template1Props) {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
