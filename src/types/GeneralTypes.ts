@@ -16,4 +16,10 @@ export interface headlinesType {
   textColor: string;
 }
 
-export interface generalTemplateProperties {}
+export interface generalTemplateProperties {
+  templateType: number;
+  mainHeadline: headlinesType;
+  subHeadline: headlinesType;
+  navbar: navbarType;
+  actionBtn: btnType;
+}

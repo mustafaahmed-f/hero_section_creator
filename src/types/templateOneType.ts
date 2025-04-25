@@ -1,11 +1,6 @@
-import { btnType, headlinesType, navbarType } from "./GeneralTypes";
+import { generalTemplateProperties } from "./GeneralTypes";
 
-export interface templateOneType {
-  templateType: number;
+export interface templateOneType extends generalTemplateProperties {
   wholeBackGroundColr: string;
-  navbar: navbarType;
-  mainHeadline: headlinesType;
-  subHeadline: headlinesType;
   imageUrl: string;
-  actionBtn: btnType;
 }
