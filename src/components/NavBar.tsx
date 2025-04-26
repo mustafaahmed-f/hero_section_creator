@@ -32,7 +32,7 @@ function NavBar({
             className="self-center text-3xl font-semibold whitespace-nowrap"
             style={{ color: titleColor || textColor }}
           >
-            {title}
+            <EditableInput defaultValue={title} />
           </span>
         </h2>
 
