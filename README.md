@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+# Hero Section Creator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript project that dynamically generates different **hero sections** using multiple templates.  
+Built with **React**, **TypeScript**, and **TailwindCSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Deployment :
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠 Technologies Used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React.js
+- TypeScript
+- TailwindCSS
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **`App.tsx`**  
+  Main app file that controls dynamic section switching and rendering.
+
+- **Folders:**
+
+  - **`types/`**  
+    Contains all TypeScript types used across the project.
+
+  - **`components/`**  
+    Reusable UI components like:
+
+    - `Headline`
+    - `SubHeadline`
+    - `EditableInputText`
+    - `Button`
+    - `Error`
+    - `Loader`
+    - `NavBar`
+
+  - **`templates/`**  
+    Contains the three different **hero section templates**:
+
+    - `template1.tsx`
+    - `template2.tsx`
+    - `template3.tsx`
+
+  - **`sections/`**  
+    Contains predefined section schemas:
+    - `section1.ts`
+    - `section2.ts`
+    - `section3.ts`  
+      Each file describes a full hero section (background, colors, headlines, and template type).
+
+---
+
+## ⚙️ App Logic (Dynamic Template Importing)
+
+- The app uses a `currentSectionNum` state to determine which section to load.
+- Clicking the "Regenerate with AI" button increments the section number.
+- Based on the loaded section's `templateType`, the correct template is **lazy-loaded** dynamically.
+- If an error occurs, an `Error` component is displayed instead.
+
+---
+
+## 🚀 How It Works
+
+- Start from `App.tsx`.
+- Based on the current section number, dynamically load:
+  - The proper **section data** (headlines, colors, background).
+  - The corresponding **template component**.
+- Render the hero section dynamically.
+- Switch between sections with one click.
+
+---
+
+## 📋 Notes
+
+- Fully **type-safe** using TypeScript.
+- **Reusable** templates and components for easy scalability.
+- **Dynamic import** and **lazy loading** to optimize performance.
