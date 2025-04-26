@@ -16,7 +16,7 @@ function EditableInput({ defaultValue, textAlignment }: EditableInputProps) {
       contentEditable
       suppressContentEditableWarning
       onChange={handleChange}
-      className="min-w-[13ch] max-w-full text-inherit bg-transparent outline-none border-0 block whitespace-pre-wrap break-words "
+      className="min-w-[13ch] max-w-full text-inherit bg-transparent outline-none border-0 block whitespace-pre-wrap break-words"
       style={{
         // display: "flex",
         textAlign: textAlignment ? textAlignment : "center",

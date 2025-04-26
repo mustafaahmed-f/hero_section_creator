@@ -30,18 +30,20 @@ function template3({ templateSchema }: template3Props) {
           className="absolute inset-0"
         ></div>
       )}
-      <div className="grid grid-rows-[auto_1fr] w-full h-full relative p-4 md:px-[144px] md:py-10">
+      <div className="grid grid-rows-[auto_1fr] w-full h-full relative">
         <NavBar {...templateSchema.navbar} />
-        <div className="flex justify-start items-start pt-16">
-          <div className="flex flex-col items-start justify-start">
-            <Headline {...templateSchema.mainHeadline} />
-            <SubHeadline {...templateSchema.subHeadline} />
-            <div className="mt-8 bg-white rounded-full flex items-center w-fit px-1 py-1">
-              <input
-                className="outline-none border-none ps-2 bg-transparent"
-                placeholder="ex: mostafa@gmail.com"
-              />
-              <Button {...templateSchema.actionBtn} />
+        <div className="w-full mx-auto flex justify-start">
+          <div className="flex max-w-screen-xl w-full mx-auto justify-start items-start p-4">
+            <div className="flex flex-col items-start justify-start">
+              <Headline {...templateSchema.mainHeadline} />
+              <SubHeadline {...templateSchema.subHeadline} />
+              <div className="mt-8 max-sm:me-auto bg-white rounded-full flex items-center w-fit px-1 py-1">
+                <input
+                  className="outline-none max-sm:max-w-36 border-none px-1 sm:ps-2 bg-transparent placeholder:max-sm:text-sm"
+                  placeholder="Enter your email"
+                />
+                <Button {...templateSchema.actionBtn} />
+              </div>
             </div>
           </div>
         </div>
