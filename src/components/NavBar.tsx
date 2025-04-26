@@ -29,7 +29,7 @@ function NavBar({
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <h2 className="flex items-center space-x-3 rtl:space-x-reverse">
           <span
-            className="self-center text-3xl font-semibold whitespace-nowrap"
+            className="self-center text-4xl font-semibold whitespace-nowrap"
             style={{ color: titleColor || textColor }}
           >
             {title}

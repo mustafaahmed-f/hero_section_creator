@@ -6,11 +6,10 @@ import {
   useState,
 } from "react";
 import "./App.css";
-import { templateOneType } from "./types/templateOneType";
-import { templateThreeType } from "./types/templateThreeType";
-import { templateTwoType } from "./types/templateTwoType";
-import RegenerateBtn from "./components/RegenerateBtn.tsx";
 import Loader from "./components/Loader.tsx";
+import RegenerateBtn from "./components/RegenerateBtn.tsx";
+import { templateOneType } from "./types/templateOneType";
+import { templateTwoType } from "./types/templateTwoType";
 
 const LazyErrorComponent = lazy(() => import("./components/ErrorComponent"));
 
@@ -20,16 +19,16 @@ type templateType =
   | LazyExoticComponent<typeof import("./templates/template3").default>
   | null;
 
-type templateSchemaType = templateOneType & templateTwoType & templateThreeType;
+type templateSchemaType = templateOneType & templateTwoType;
 
 function App() {
   const { 0: template, 1: setTemplate } = useState<templateType>(null);
   const { 0: templateSchema, 1: setTemplateSchema } =
     useState<templateSchemaType | null>(null);
-  const { 0: currentSectionNum, 1: setCurrentSectionNum } = useState<number>(2);
+  const { 0: currentSectionNum, 1: setCurrentSectionNum } = useState<number>(1);
 
   function changeSection() {
-    if (currentSectionNum === 2) {
+    if (currentSectionNum === 3) {
       setCurrentSectionNum(1);
     } else {
       setCurrentSectionNum((prev) => prev + 1);

@@ -11,6 +11,7 @@ export interface btnType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   textColor: string;
   text: string;
   hoverColor: string;
+  roundedFull?: boolean;
 }
 
 export interface headlinesType {
