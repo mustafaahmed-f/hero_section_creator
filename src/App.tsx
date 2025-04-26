@@ -26,7 +26,7 @@ function App() {
   const { 0: template, 1: setTemplate } = useState<templateType>(null);
   const { 0: templateSchema, 1: setTemplateSchema } =
     useState<templateSchemaType | null>(null);
-  const { 0: currentSectionNum, 1: setCurrentSectionNum } = useState<number>(1);
+  const { 0: currentSectionNum, 1: setCurrentSectionNum } = useState<number>(2);
 
   function changeSection() {
     if (currentSectionNum === 2) {

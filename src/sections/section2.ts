@@ -10,9 +10,10 @@ export const sectionSchema: templateTwoType = {
     titleColor: "#FDFDFC",
     textColor: "#F3F2F2",
     options: ["Home", "Courses", "Pricing", "Contact"],
+    dropDownTextColor: "#000000",
   },
   actionBtn: {
-    text: "Get Started",
+    text: "Let's Learn",
     textColor: "#FDFDFC",
     bgColor: "#226AD3",
     hoverColor: "#1B4BCC",

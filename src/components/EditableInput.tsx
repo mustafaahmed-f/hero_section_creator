@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 interface EditableInputProps {
   defaultValue: string;
+  textAlignment?: "left" | "center" | "right";
 }
 
-function EditableInput({ defaultValue }: EditableInputProps) {
+function EditableInput({ defaultValue, textAlignment }: EditableInputProps) {
   const { 0: value, 1: setValue } = useState<string>(defaultValue);
 
   function handleChange(e: React.ChangeEvent<HTMLDivElement>) {
@@ -15,10 +16,10 @@ function EditableInput({ defaultValue }: EditableInputProps) {
       contentEditable
       suppressContentEditableWarning
       onChange={handleChange}
-      className="min-w-[13ch] max-w-full text-inherit bg-transparent outline-none border-0 text-center block whitespace-pre-wrap break-words "
+      className="min-w-[13ch] max-w-full text-inherit bg-transparent outline-none border-0 block whitespace-pre-wrap break-words "
       style={{
         // display: "flex",
-
+        textAlign: textAlignment ? textAlignment : "center",
         alignItems: "center",
         justifyContent: "center",
       }}

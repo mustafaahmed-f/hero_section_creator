@@ -1,16 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navbarType } from "../types/GeneralTypes";
 import EditableInput from "./EditableInput";
 
-function NavBar({ title, options, textColor }: navbarType) {
+function NavBar({
+  title,
+  options,
+  textColor,
+  titleColor,
+  dropDownTextColor,
+}: navbarType) {
   const { 0: isOpen, 1: setIsOpen } = useState<boolean>(false);
+  const { 0: screenWidth, 1: setScreenWidth } = useState<number>(
+    window.innerWidth
+  );
+
+  useEffect(() => {
+    function resizeScreen() {
+      setScreenWidth(window.innerWidth);
+    }
+
+    document.addEventListener("resize", resizeScreen);
+
+    return () => document.removeEventListener("resize", resizeScreen);
+  }, [setScreenWidth]);
+
   return (
     <nav className="bg-transparent max-md:relative max-w-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <h2 className="flex items-center space-x-3 rtl:space-x-reverse">
           <span
             className="self-center text-3xl font-semibold whitespace-nowrap"
-            style={{ color: textColor }}
+            style={{ color: titleColor || textColor }}
           >
             {title}
           </span>
@@ -43,12 +63,19 @@ function NavBar({ title, options, textColor }: navbarType) {
             isOpen ? "block" : "hidden"
           }`}
         >
-          <ul className="font-medium flex flex-col p-4 mt-4  border rounded-lg max-md:bg-[#f9f9f9] md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <ul
+            className={`font-medium flex flex-col p-4 mt-4  border rounded-lg max-md:bg-[#f9f9f9] md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0`}
+          >
             {options.map((option: string) => (
               <li
                 key={option}
-                className="py-2 px-3 rounded-sm"
-                style={{ color: textColor }}
+                className={`py-2 px-3 rounded-sm`}
+                style={{
+                  color:
+                    dropDownTextColor && screenWidth < 768
+                      ? dropDownTextColor
+                      : textColor,
+                }}
               >
                 <EditableInput defaultValue={option} />
               </li>

@@ -3,6 +3,7 @@ export interface navbarType {
   titleColor?: string;
   options: string[];
   textColor: string;
+  dropDownTextColor?: string; //// Used to apply color to navbar dropdown items for screen width less than 768px
 }
 
 export interface btnType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,6 +16,7 @@ export interface btnType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export interface headlinesType {
   text: string;
   textColor: string;
+  textAlignment?: "left" | "center" | "right";
 }
 
 export interface generalTemplateProperties {
