@@ -11,6 +11,14 @@ Link : https://herosectioncreator.netlify.app/
 
 ---
 
+## How to use it :
+
+- Clone project using this link : https://github.com/mustafaahmed-f/hero_section_creator.git
+- In cmd, type : npm i
+- Finally type : npm run dev
+
+---
+
 ## 🛠 Technologies Used
 
 - React.js
